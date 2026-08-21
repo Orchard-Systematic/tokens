@@ -1,0 +1,101 @@
+/* ── Orchard design tokens ──
+ * Single source of truth for all CSS custom properties shared across
+ * Orchard Systematic apps (website, harvest).
+ *
+ * Import in any Next.js global CSS file:
+ *   @import '@orchard/tokens/tokens.css';
+ *
+ * Mirror colours are documented in app/lib/theme.ts (for Python notebooks).
+ */
+
+:root {
+  --accent: #4da3c7;
+  --accent-alt: #2f80ed;
+  --muted: #c7ccd6;
+  --on-accent: #fff;
+  --chart-bg: transparent;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "Fira Code", "Courier New", Courier, monospace;
+  --draft-bg: var(--color-warning);
+  --draft-text: #1a1a2e;
+
+  /* Semantic status colours */
+  --color-positive: #22c55e;
+  --color-negative: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #34d399; /* emerald-400: local-env ok chips & logs */
+  --color-danger: #f87171; /* red-400:     local-env error borders */
+  --color-info: #60a5fa; /* blue-400:    local-env running logs */
+}
+
+/* ── Dark theme ── */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111827;
+  --bg-card: rgba(248, 250, 252, 0.04);
+  --code-bg: rgba(248, 250, 252, 0.08);
+  --text: #f8fafc;
+  --text-secondary: #c7ccd6;
+  --border: rgba(199, 204, 214, 0.12);
+  --grid-color: rgba(255, 255, 255, 0.1);
+
+  /* Aliases (keep in sync with above) */
+  --card-bg: var(--bg-card);
+  --text-primary: var(--text);
+
+  /* Opaque surfaces for <select>/<option> and deep backgrounds */
+  --surface-solid: #1a1d23;
+  --surface-deep: #0d1117;
+  --surface-muted: #94a3b8;
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(255, 255, 255, 0.15);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.25);
+
+  /* Syntax highlighting */
+  --hljs-bg: rgba(248, 250, 252, 0.08);
+  --hljs-fg: #c9d1d9;
+  --hljs-comment: #8b949e;
+  --hljs-keyword: #ff7b72;
+  --hljs-string: #a5d6ff;
+  --hljs-number: #79c0ff;
+  --hljs-built-in: #ffa657;
+  --hljs-title: #d2a8ff;
+  --hljs-params: #c9d1d9;
+  --hljs-attr: #79c0ff;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --bg-card: rgba(17, 24, 39, 0.03);
+  --code-bg: rgba(17, 24, 39, 0.06);
+  --text: #111827;
+  --text-secondary: rgba(17, 24, 39, 0.55);
+  --border: rgba(17, 24, 39, 0.08);
+  --grid-color: rgba(0, 0, 0, 0.1);
+
+  /* Aliases */
+  --card-bg: var(--bg-card);
+  --text-primary: var(--text);
+  --surface-solid: #f0f1f3;
+  --surface-deep: #f6f8fa;
+  --surface-muted: #64748b;
+
+  /* Scrollbar */
+  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+
+  /* Syntax highlighting */
+  --hljs-bg: rgba(17, 24, 39, 0.06);
+  --hljs-fg: #24292e;
+  --hljs-comment: #6a737d;
+  --hljs-keyword: #d73a49;
+  --hljs-string: #032f62;
+  --hljs-number: #005cc5;
+  --hljs-built-in: #e36209;
+  --hljs-title: #6f42c1;
+  --hljs-params: #24292e;
+  --hljs-attr: #005cc5;
+}
